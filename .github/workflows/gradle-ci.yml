@@ -37,7 +37,7 @@ jobs:
       - name: Retrieve changed files (PR)
         id: getfiles
         run: |
-          echo "::set-output name=files::$(git diff-tree --no-commit-id --diff-filter=d --name-only -r ${{ github.event.pull_request.base.sha }}  ${{ github.sha }} | grep \\.nim | xargs)"
+          echo "::set-output name=files::$(git diff-tree --no-commit-id --diff-filter=d --name-only -r ${{ github.event.pull_request.base.sha }}  ${{ github.sha }} | grep \\.java | xargs)"
         shell: bash
 
       - name: Check that each file compiles with `gradle check`
@@ -78,7 +78,7 @@ jobs:
       - name: Retrieve changed files (push)
         id: getfiles
         run: |
-          echo "::set-output name=files::$(git diff-tree --no-commit-id --diff-filter=d --name-only -r ${{ github.event.before }}  ${{ github.sha }} | grep \\.nim | xargs)"
+          echo "::set-output name=files::$(git diff-tree --no-commit-id --diff-filter=d --name-only -r ${{ github.event.before }}  ${{ github.sha }} | grep \\.java | xargs)"
         shell: bash
 
       - name: Check that each file compiles with `gradle check`

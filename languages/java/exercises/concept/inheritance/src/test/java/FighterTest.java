@@ -8,8 +8,10 @@ public class FighterTest {
 
     @Test
     public void testToString() {
+
         Fighter warrior = new Warrior();
         assertEquals("Fighter is a Warrior", warrior.toString());
+
     }
 
     @Ignore("Remove to run the test")
