@@ -79,6 +79,7 @@ jobs:
 
       - name: Check that each file compiles with `gradle check`
         run: |
+          echo pwd
           set +e
           exitCode=0
           for file in ${{ steps.getfiles.outputs.files }}
