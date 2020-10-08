@@ -60,15 +60,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
-        with:
-         java-version: 1.8
 
       - name: Number of commits since last push
         id: number_of_commits
         run: |
-          echo "::set-output name=number::$(git log ${{ github.event.before }}..${{ github.sha }}  --pretty=oneline | wc -l)"
+          echo "::set-output name=number::$(q}  --pretty=oneline | wc -l)"
         shell: bash
 
       - uses: actions/checkout@v2
